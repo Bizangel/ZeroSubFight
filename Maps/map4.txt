@@ -1,0 +1,104 @@
+from random import randint
+import Modules.extraFunctions as extra
+global mapclouds,xcircular,ycircular,spawn1,spawn2,xface1,xface2,circuitInfo
+mapclouds = False
+ycircular = False
+xcircular = False
+
+circuitTimes = extra.randomChipTimes()
+
+circuitInfo = [(864,637),(403,637),(34,651),(1224,651),(1155,192),(167,192),(632,293),(632,77),circuitTimes]
+mapChoose = randint(0,1)
+if mapChoose == 0:
+	spawn1 = (100,492)
+	spawn2 = (1140,492)
+	xface1 = 'R'
+	xface2 = 'L'
+elif mapChoose == 1:
+	spawn2 = (100,492)
+	spawn1 = (1140,492)
+	xface2 = 'R'
+	xface1 = 'L'
+
+for i in range(100):
+	grid32(i,0,'ltsBlockBlack')
+	grid32(i,1,'ltsBlockM')
+	
+grid32(4,10,'ltsBlockR')
+grid32(3,10,'ltsBlockM')
+for i in range(4):
+	grid32(4,9-i,'ltsBlockMR')
+	grid32(3,9-i,'ltsBlockML')
+grid32(4,5,'ltsBlockRdown')
+grid32(3,5,'ltsBlockLdown')
+
+grid32(36,10,'ltsBlockM')
+grid32(35,10,'ltsBlockL')
+for i in range(4):
+	grid32(36,9-i,'ltsBlockMR')
+	grid32(35,9-i,'ltsBlockML')
+grid32(36,5,'ltsBlockRdown')
+grid32(35,5,'ltsBlockLdown')
+
+
+grid32(10,6,'ltsBlockL')
+grid32(11,6,'ltsBlockM')
+grid32(12,6,'ltsBlockM')
+grid32(13,6,'ltsBlockM')
+grid32(14,6,'ltsBlockM')
+grid32(15,6,'ltsBlockR')
+
+grid32(24,6,'ltsBlockL')
+grid32(25,6,'ltsBlockM')
+grid32(26,6,'ltsBlockM')
+grid32(27,6,'ltsBlockM')
+grid32(28,6,'ltsBlockM')
+grid32(29,6,'ltsBlockR')
+
+grid32(18,0,'ltsBlockL',0,2,'MoveBlocks1')
+grid32(19,0,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(20,0,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(21,0,'ltsBlockR',0,2,'MoveBlocks1')
+
+grid32(18,7,'ltsBlockL',0,2,'MoveBlocks1')
+grid32(19,7,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(20,7,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(21,7,'ltsBlockR',0,2,'MoveBlocks1')
+
+grid32(18,14,'ltsBlockL',0,2,'MoveBlocks1')
+grid32(19,14,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(20,14,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(21,14,'ltsBlockR',0,2,'MoveBlocks1')
+
+grid32(18,21,'ltsBlockL',0,2,'MoveBlocks1')
+grid32(19,21,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(20,21,'ltsBlockM',0,2,'MoveBlocks1')
+grid32(21,21,'ltsBlockR',0,2,'MoveBlocks1')
+
+grid32(10,15,'ltsBlockL',3,0,'MoveBlocks2')
+grid32(11,15,'ltsBlockM',3,0,'MoveBlocks2')
+grid32(12,15,'ltsBlockM',3,0,'MoveBlocks2')
+grid32(13,15,'ltsBlockR',3,0,'MoveBlocks2')
+
+grid32(27,15,'ltsBlockL',-3,0,'MoveBlocks3')
+grid32(28,15,'ltsBlockM',-3,0,'MoveBlocks3')
+grid32(29,15,'ltsBlockM',-3,0,'MoveBlocks3')
+grid32(30,15,'ltsBlockR',-3,0,'MoveBlocks3')
+
+grid32(39,10,'ltsBlockR',0,0,'fadeBlocks1')
+grid32(38,10,'ltsBlockM',0,0,'fadeBlocks1')
+grid32(37,10,'ltsBlockM',0,0,'fadeBlocks1')
+
+grid32(0,10,'ltsBlockL',0,0,'fadeBlocks2')
+grid32(1,10,'ltsBlockM',0,0,'fadeBlocks2')
+grid32(2,10,'ltsBlockM',0,0,'fadeBlocks2')
+
+
+
+
+
+
+
+
+
+

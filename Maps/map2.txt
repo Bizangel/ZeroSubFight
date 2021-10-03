@@ -1,0 +1,108 @@
+from random import randint
+import Modules.extraFunctions as extra
+global mapclouds,xcircular,ycircular,spawn1,spawn2,xface1,xface2,circuitInfo
+mapclouds = True
+ycircular = True
+xcircular = False
+
+circuitTimes = extra.randomChipTimes()
+
+circuitInfo = [(605,130),(1181,470),(51,150),(416,349),(921,221),(918,413),(62,413),(356,548),circuitTimes]
+mapChoose = randint(0,1)
+if mapChoose == 0:
+	spawn1 = (20,398)
+	spawn2 = (1180,142)
+	xface1 = 'R'
+	xface2 = 'L'
+elif mapChoose == 1:
+	spawn2 = (20,398)
+	spawn1 = (1180,142)
+	xface2 = 'R'
+	xface1 = 'L'
+
+for i in range(20):
+	grid (i,0,'mtsBlockMetal')
+grid (0,1,'mtsBlock')
+grid(1,1,'mtsTeleporter')
+for i in range(2,18):
+	grid (i,1,'mtsBlock')
+grid (19,1,'mtsBlock')
+grid(18,1,'mtsTeleporter')
+for i in range(20):
+	grid(i,13,'mtsBarHang')
+grid(6,12,'mtsBarHang')
+grid(6,11,'mtsBarHang')
+grid(6,10,'mtsBarHang')
+grid(6,9,'mtsBarHang')
+grid(6,8,'mtsBarHang')
+
+
+grid (5,7,'mtsBlockMetal')
+grid (6,7,'mtsBlockMetal')
+grid (7,7,'mtsBlockMetal')
+
+grid (0,10,'mtsBlock')
+grid (1,10,'mtsBlock')
+grid (2,10,'mtsBrokenRight')
+
+grid (19,5,'mtsBlock')
+grid (18,5,'mtsBlock')
+grid (17,5,'mtsBrokenLeft')
+for i in range(7,12):
+	grid(i,2,'mtsBlockLight')
+grid(8,3,'mtsBlockLight')
+grid(9,3,'mtsHotBlock')
+grid(10,3,'mtsBlockLight')
+
+grid(15,6,'mtsBlockMetal')
+grid(14,6,'mtsBlockMetal')
+grid(13,6,'mtsBlockMetal')
+
+grid(18,10,'mtsBrokenLeft')
+grid(19,10,'mtsBlock')
+
+
+for i in range(10,13):
+	grid(13,i,'mtsBarHang')
+for i in range(8,10):
+	grid(0,i,'mtsBarsCut')
+grid(0,7,'mtsBarsBroken')
+grid(1,6,'mtsBlock')
+grid(1,5,'mtsBrokenLeft')
+grid(2,5,'mtsBlock')
+grid(3,5,'mtsBlock')
+
+for i in range(12,17):
+	grid(i,9,'mtsBlockMetal')
+
+#Decor Bg Bars etc
+grid(3,2,'mtsBlockYellow')
+grid(4,2,'mtsBlockYellow')
+grid(3,3,'mtsBlockYellow')
+grid(3,4,'mtsBlockYellow')
+for i in range(0,20):
+	grid(i,3,'mtsBarsX')
+for i in range(0,20):
+	grid(i,2,'mtsBarsX')
+for i in range(10,13):
+	grid(15,i,'mtsBarHang')
+grid(1,3,'mtsSignal')
+grid(18,3,'mtsSignal')
+grid(0,6,'mtsBrokenLeft')
+grid(14,8,'mtsBarHang')
+grid(14,7,'mtsBarHang')
+
+grid(0,2,'mtsBlockYellow')
+grid(0,3,'mtsBlockYellow')
+grid(0,2,'mtsBars')
+grid(0,3,'mtsBars')
+grid(19,2,'mtsBlockYellow')
+grid(19,3,'mtsBlockYellow')
+grid(19,2,'mtsBars')
+grid(19,3,'mtsBars')
+
+grid(9,13,'mtsBlockMetal')
+grid(8,13,'mtsBlockMetal')
+grid(10,13,'mtsBlockMetal')
+
+

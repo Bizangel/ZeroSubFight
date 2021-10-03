@@ -1,0 +1,23 @@
+global mapclouds,ycircular,xcircular,spawn1,spawn2,xface1,xface2
+
+mapclouds = True
+ycircular = True
+xcircular = False
+
+spawn1 = (20,398)
+spawn2 = (900,142)
+xface1 = 'R'
+xface2 = 'L'
+
+for i in range(20):
+	grid(i,0,'mtsBlockMetal')
+
+for i in range(20):
+	grid(i,1,'mtsBlockMetal')
+
+grid(10,12,'mtsBlockMetal')
+grid(1,2,'mtsBlockMetal')
+grid(10,2,'mtsBlockMetal')
+grid(15,2,'mtsBlockMetal')
+grid(4,3,'mtsBlockMetal',3,0,'testBlock')
+grid(16,3,'mtsBlockMetal',0,0,'fadeBlock')

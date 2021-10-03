@@ -1,0 +1,138 @@
+from random import randint
+import Modules.extraFunctions as extra
+global mapclouds,xcircular,ycircular,spawn1,spawn2,xface1,xface2,circuitInfo
+mapclouds = True
+ycircular = True
+xcircular = False
+
+circuitTimes = extra.randomChipTimes()
+
+circuitInfo = [(739,765),(534,765),(104,173),(1194,173),(654,416),(619,130),circuitTimes]
+mapChoose = randint(0,1)
+if mapChoose == 0:
+	spawn1 = (50,700)
+	spawn2 = (1180,700)
+	xface1 = 'R'
+	xface2 = 'L'
+elif mapChoose == 1:
+	spawn2 = (50,700)
+	spawn1 = (1180,700)
+	xface2 = 'R'
+	xface1 = 'L'
+
+for i in range(100):
+	grid16(i,0,'ctsBlockDirty')
+	grid16(i,1,'ctsBlockBlur')
+	grid(i,2,'mtsBlockMetal',0,0,None,(i*64,896-96))
+
+for i in range(3):
+	grid(i,12, 'mtsBarHang')
+
+for i in range(3):
+	grid(19-i,12, 'mtsBarHang')	
+
+grid(3,12,'mtsBlockYellow')
+grid(3,10,'mtsBlockYellow')
+
+
+for i in range(3):
+	grid(3,10+i,'mtsBarHang')
+
+grid(16,12,'mtsBlockYellow')
+grid(16,10,'mtsBlockYellow')
+
+
+for i in range(3):
+	grid(16,10+i,'mtsBarHang')
+	
+
+for i in range(20):
+	grid(i,13, 'mtsBarsX')
+
+for i in range(3):
+	grid(i,3, 'mtsBarsX', 0,0,None, (i*64,896-160))
+
+grid(4,3, 'mtsSignal', 0,0,None, (3*64,896-160))
+grid(6,3, 'mtsBarsBroken', 0,0,None, (4*64,896-160))
+grid(35,3, 'mtsSignal', 0,0,None, (3*64,896-160))
+
+for i in range(17,20):
+	grid(i,3, 'mtsBarsX', 0,0,None, (i*64,896-160))
+
+
+grid(40,3, 'mtsBarsX', 0,0,None, (16*64, 896-160))
+grid(35,3, 'mtsSignal', 0,0,None, (15*64,896-160))
+
+for i in range(31,35):
+	grid16(i,11,'ctsBlockBlur')
+	grid16(i,10,'ctsBlockBlur')
+
+grid(7,3, 'mtsBars', 0,0,None, (7*64+48,896-160))
+
+for i in range(44,48):
+	grid16(i,11,'ctsBlockBlur')
+	grid16(i,10,'ctsBlockBlur')
+
+grid(11,3, 'mtsBars', 0,0,None, (11*64,896-160))
+
+for i in range(100):
+	grid16(i,134,'ctsBlockDirty')
+	grid16(i,89,'ctsBlockBlur')
+
+	
+for i in range(0,25):
+	grid16(i,24, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,23, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,22, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	
+for i in range(0,25):
+	grid16(i,40, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,41, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,42, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	
+for i in range(0,25):
+	grid16(i,5, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,6, 'ctsBlockCracked',0,1,'MoveBlocks1')
+	grid16(i,7, 'ctsBlockCracked',0,1,'MoveBlocks1')
+
+for i in range(30,50):
+	grid16(i,15,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,14,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,13,'ctsBlockCracked',0,1,'MoveBlocks2')
+	
+for i in range(30,50):
+	grid16(i,33,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,34,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,35,'ctsBlockCracked',0,1,'MoveBlocks2')
+	
+for i in range(10,70):
+	grid16(i,53,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,54,'ctsBlockCracked',0,1,'MoveBlocks2')
+	grid16(i,52,'ctsBlockCracked',0,1,'MoveBlocks2')
+
+for i in range(55,80):
+	grid16(i,24, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,23, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,22, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	
+for i in range(55,80):
+	grid16(i,40, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,41, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,42, 'ctsBlockCracked',0,1,'MoveBlocks3')
+
+for i in range(55,80):
+	grid16(i,5, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,6, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	grid16(i,7, 'ctsBlockCracked',0,1,'MoveBlocks3')
+	
+
+
+
+
+	
+
+grid(i,2,'mtsBlockMetal',0,0,None,(896-96,i*64))
+
+grid(2,i,'mtsBlockMetal',0,0,None,(896-96,i*64))
+
+
